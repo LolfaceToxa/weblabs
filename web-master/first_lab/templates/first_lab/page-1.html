@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+{% load i18n %}
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+        <div id="list">
+    <button type="button">{% trans 'Add' %}</button>
+    <ul></ul>
+  </div>
+
+  <script>
+    const elementList = document.querySelector('#list');
+    const elementBtn = elementList.querySelector('button');
+    const elementUl = elementList.querySelector('ul');
+
+    function updateStorage() {
+      const data = [];
+      for (let element of elementUl.querySelectorAll('li')) {
+        data.push(element.textContent);
+      }
+      sessionStorage['items'] = JSON.stringify(data);
+    }
+
+    function updateUl(items) {
+      const html = [];
+      for (let item of items) {
+        html.push(`<li>${item}</li>`);
+      }
+      elementUl.innerHTML = html.join('');
+    }
+
+    elementBtn.onclick = () => {
+      const elementsLi = elementUl.querySelectorAll('li');
+      const newLi = document.createElement('li');
+      newLi.textContent = elementsLi.length + 1;
+      elementUl.append(newLi);
+      updateStorage();
+    }
+
+    window.onstorage = event => {
+      updateUl(JSON.parse(event.newValue));
+    }
+  </script>
+  </head>
+<body>
+
+</body>
+</html>

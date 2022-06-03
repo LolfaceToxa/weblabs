@@ -1,0 +1,39 @@
+{% extends 'first_lab/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+{#    <div class="pages" id="start-page">#}
+{#        <h1 id="title">Ваши мысли и идеи</h1>#}
+{#        <h2 id="tagline">Прекрасная возможность выразить себя</h2>#}
+{#        <button id="create"></button>#}
+{#        <button id="create"></button>#}
+{#    </div>#}
+    <main class="page">
+        <div class="page__main-block main-block">
+            <div class="main-block__container _container">
+                <div class="main-block__body">
+                    <h3>{% trans 'Title' %}:</h3><p>{{data.blog_title}}</p><br>
+                    <h3>{% trans 'Blog' %}</h3>
+                    <p>{{data.blog}}</p>
+                    <hr/>
+
+                    <a href = "{% url 'blogs' %}">{% trans 'Return' %}</a>
+
+                    <form method="post">
+                        {%csrf_token %}
+                        <H2>{% trans 'Comment here' %}</H2>
+                        {{form.as_p}}
+                        <input type ="submit" value="Comment">
+                    </form>
+                    {%for comment in comments%}
+                    <p><strong>{{comment.your_name}}:</strong> {{comment.comment_text}}</p>
+                    {%endfor %}
+
+                </div>
+            </div>
+            <div class="main-block__image _ibg">
+                <img src="{% static "first_lab/images/back.jpg" %}" alt="cover">
+            </div>
+        </div>
+    </main>
+{% endblock %}

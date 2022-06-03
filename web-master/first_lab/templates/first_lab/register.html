@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% extends 'first_lab/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+    <main class="page">
+        <div class="page__register-block">
+            <div class="register-block__container _container">
+                <div class="register-block__body">
+
+                    <h1 class="register-block__title">{% trans 'Register' %}</h1>
+
+                    <div class="register-block__form">
+                        {#                        <form method="post" class="form">#}
+                        {#                            {% csrf_token %}#}
+                        {#                            ghbdtn#}
+                        {#                        </form>#}
+                        <form class="form" id="form" method="post">
+                            {% csrf_token %}
+                            {% for f in form %}
+                                {% if f.errors %}
+                                    <div class="form-control error">
+                                {% elif not form.is_bound %}
+                                    <div class="form-control">
+                                {% else %}
+                                    <div class="form-control success">
+                                {% endif %}
+                            {{ f }}
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>{{ f.errors|first }}</small>
+                            </div>
+                            {% endfor %}
+
+                            {#                            <button type="submit"></button>#}
+                            <div class="register-block__button">
+                                <button type="submit"><img src="{% static "first_lab/images/create_button.png" %}"></button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            <div class="register-block__image _ibg">
+                <img src="{% static "first_lab/images/back.jpg" %}" width="100%" height="100%"
+                     alt="cover">
+            </div>
+        </div>
+    </main>
+{% endblock %}

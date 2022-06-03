@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% load static %}
+{% load i18n %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Рецепты</title>
+    <link rel="stylesheet" href="{% static 'first_lab/fontawesome-free-6.0.0-web/fontawesome-free-6.0.0-web/css/all.css' %}">
+    <link type="text/css" href="{% static 'first_lab/css/recipes_styles.css' %}" rel="stylesheet"/>
+    <script src="{% static 'first_lab/js/script.js' %}"></script>
+</head>
+<body>
+    <div class="pages" id="first">
+        <span class="shadow"></span>
+        <div id="menu">
+            <span id="logo"></span>
+            <span id="about-us"><a href="#second-page" class="hrefs">About Us</a></span>
+            <span id="log-in"><a href="#login-page" class="hrefs">Log In</a></span>
+        </div>
+        <h1 id="title">{% trans 'Your ideas and desires' %}</h1>
+        <h2 id="tagline">{% trans 'Wonderful chance to make a move' %} </h2>
+        <button id="create"></button>
+    </div>
+
+
+    <div id="second">
+        <a name="second-page"></a>
+        <span class="shadow"></span>
+        <h1 class="second-titles" id="about-us-title">{% trans 'Info' %}</h1>
+        <span id="about-us-text">{% trans 'Do you want to share your opinion' %}<br>{% trans 'You can do it here' %}<br>
+        </span>
+        <h2 id="get-started">{% trans 'Get Started!' %}</h2>
+    </div>
+
+
+    <div id="log-in-page">
+        <a name="login-page"></a>
+        <span class="shadow"></span>
+        <h2 class="second-titles" id="register-title">{% trans 'Register' %}</h2>
+        <div class="container">
+            <form class="form" id="form">
+                <div class="form-control" id="name-form">
+                    <label for="username"></label>
+                    <input type="text" placeholder="Name" class="input-field" id="username">
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>{% trans 'Error' %}</small>
+                </div>
+
+                <div class="form-control" id="email-form">
+                    <label for="e-mail"></label>
+                    <input type="text" class="input-field" placeholder="E-mail" id="e-mail">
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>{% trans 'Error' %}</small>
+                </div>
+
+                <div class="form-control" id="password-form">
+                    <label for="password"></label>
+                    <input type="text" placeholder="Password" class="input-field" id="password">
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>{% trans 'Error' %}</small>
+                </div>
+
+                <div class="form-control" id="password-form2" >
+                    <label for="repeat-password"></label>
+                    <input type="text" placeholder="Repeat Password" class="input-field" id="repeat-password">
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>{% trans 'Error' %}</small>
+                </div>
+
+                <button type="submit"></button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

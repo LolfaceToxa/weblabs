@@ -1,0 +1,369 @@
+/*--------------------------------------------шрифты--------------------------------------------*/
+@font-face {
+    font-family: "MyRoboto";
+    src: url("../fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+}
+
+/*-------------------------------внешний блок, чтобы не было горизонтального скрола------------------------------*/
+.wrapper {
+    min-height: 100%;
+    overflow: hidden;
+}
+
+
+/*--------------------------------------------основные настройки--------------------------------------------*/
+::before, ::after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul, li, ol {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+html, body {
+    height: 100%;
+    line-height: 1;
+    font-size: 30px;
+    color: white;
+    font-style: normal;
+    font-family: MyRoboto;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    zoom: 85%
+    /*background: url("../images/alternative-background.png");*/
+    /*backdrop-filter: brightness(50%);*/
+}
+
+/*--------------------------------------внутренний блок для всех элементов--------------------------------------*/
+._container {
+    max-width: 1500px;
+    margin: 0 auto;
+    box-sizing: content-box;
+}
+
+._ibg {
+    position: relative;
+}
+
+._ibg img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+
+/*--------------------------------------Шапка--------------------------------------*/
+
+.header {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    z-index: 50;
+}
+
+.header__container {
+    display: flex;
+    min-height: 140px;
+    align-items: center;
+}
+
+.menu {
+    padding: 5px 0;
+}
+
+.header__menu {
+    margin-left: auto;
+    margin-right: 0px;
+}
+
+.header__logo {
+    height: 100px;
+    width: 100px;
+    background: url("../images/logo.png") no-repeat;
+    background-size: cover;
+}
+
+.menu__list {
+    opacity: 0.3;
+    display: flex;
+    flex-wrap: wrap;
+    transition: 0.5s;
+}
+
+.menu__list:hover {
+    opacity: 1;
+}
+
+
+.menu__item:not(:last-child) {
+    margin: 0 75px 0 0;
+}
+
+.menu__link {
+    font-weight: 700;
+    font-size: 90%;
+    color: inherit;
+    line-height: 140%;
+}
+
+/*--------------------------------------------главная страница--------------------------------------------*/
+
+.main-block {
+    /*position: relative;*/
+    /*margin: 0;*/
+}
+
+.main-block__body {
+    padding: 300px 0 163px 0;
+    position: relative;
+    z-index: 2;
+}
+
+.main-block__title {
+    font-weight: 500;
+    font-size: 300%;
+    padding: 0 91px;
+    text-align: center;
+}
+
+.main-block__text {
+    font-size: 120%;
+    text-align: center;
+    padding: 0 166px;
+}
+
+.main-block__button {
+    padding: 90px 0 0 0;
+}
+
+.main-block__button img{
+    display: block;
+    margin: 0 auto;
+}
+
+
+.main-block__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    filter: brightness(50%);
+}
+
+/*--------------------------------------------о нас--------------------------------------------*/
+
+.about_us-block {
+    /*position: relative;*/
+    /*margin: 0;*/
+}
+
+.about_us-block__body {
+    padding: 250px 0 163px 0;
+    position: relative;
+    z-index: 2;
+}
+
+.about_us-block__title {
+    font-weight: 500;
+    font-size: 300%;
+    padding: 0 166px;
+    text-align: left;
+}
+
+.about_us-block__text {
+    font-size: 120%;
+    text-align: left;
+    padding: 0 166px;
+}
+
+.about_us-block__button {
+    padding: 90px 0 0 0;
+}
+
+.about_us-block__button img{
+    display: block;
+    margin: 0 auto;
+}
+
+
+.about_us-block__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    filter: brightness(50%);
+}
+
+/*--------------------------------------------регистрация--------------------------------------------*/
+
+.register-block {
+    /*position: relative;*/
+    /*margin: 0;*/
+}
+
+.register-block__body {
+    padding: 120px 0 120px 0;
+    position: relative;
+    z-index: 2;
+}
+
+.register-block__title {
+    font-weight: 500;
+    font-size: 300%;
+    /*padding: 0 166px;*/
+    text-align: center;
+}
+
+
+.register-block__button {
+    padding: 30px 0 0 0;
+}
+
+.register-block__button img{
+    width: 250px;
+    height: auto;
+    /*display: block;*/
+    /*margin: 0 auto;*/
+}
+
+
+.register-block__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    filter: brightness(50%);
+}
+
+.register-block__form {
+    position: relative
+}
+
+.form {
+    position: absolute;
+}
+
+.form-control {
+    left:50%;
+    position: relative;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    width: 730px;
+    height: 84px;
+
+    /*background: #C4C4C4;*/
+    border-radius: 10px;
+}
+
+
+---------------------------------------------
+
+.register-block__form {
+    /*background: green;*/
+    margin: 0 auto;
+    width: 789px;
+    height: 600px;
+    left: 450px;
+    top: 280px;
+
+    opacity: 0.8;
+}
+
+.form {
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.form-control.success input{
+    border-color: #12E635;
+}
+
+.form-control.success i.fa-check-circle {
+    visibility: visible;
+    color: #12E635;
+}
+
+.form-control.error input{
+    border-color: #FF0404;
+}
+
+.form-control.error i.fa-exclamation-circle {
+    visibility: visible;
+    color: #FF0404;
+}
+
+.form-control input {
+    background: #FFFFFF;
+    border: 2px solid #f0f0f0;
+    border-radius: 10px;
+    display: block;
+    font-family: MyRoboto;
+    font-size: 20px;
+    padding: 20px;
+    width: 100%;
+    /*height: 100%;*/
+}
+
+.form-control i{
+    position: absolute;
+    visibility: hidden;
+    top:25px;
+    right: -25px;
+}
+
+.form-control small{
+    position: absolute;
+    visibility: hidden;
+    bottom: -5px;
+    left: 0;
+    color: #FFFFFF;
+    font-family: MyRoboto;
+    font-size: 20px;
+}
+
+.form-control.error small{
+    visibility: visible;
+    color: #FF0404;
+}
+
+.form button{
+    position: relative;
+    display: block;
+    left: 83%;
+    background: url("../images/create_button.png");
+    background-size: 100%;
+    /*width: 280px;*/
+    /*height: 62px;*/
+    /*margin: 0 auto;*/
+
+    border-radius: 50px;
+
+    /*display: block;*/
+}
+

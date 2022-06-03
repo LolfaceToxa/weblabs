@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+{% load i18n %}
+<html lang="en">
+<head>
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{% static 'first_lab/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'first_lab/fontawesome-free-6.0.0-web/fontawesome-free-6.0.0-web/css/all.css' %}">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="shortcut icon" href="{% static 'first_lab/images/logo.png' %}" type="image/x-logo"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+    <body>
+        <div class="wrapper">
+
+            {% block mainmenu %}
+                <header class="header">
+                    <div class="header__container _container">
+                        <a href="{% url "index" %}" class="header__logo"></a>
+                        <nav class="header__menu menu">
+                            <ul class="menu__list">
+                                <li class="menu__item">
+                                    <a href="{% url "info" %}" class="menu__link"> {% trans 'Info' %}</a>
+                                </li>
+
+                                <li class="menu__item">
+                                    <a href="{% url "register" %}" class="menu__link">{% trans 'Registration' %}</a>
+                                </li>
+
+                                <li class="menu__item">
+                                    <a href="{% url "blogs" %}" class="menu__link">{% trans 'Messages' %}</a>
+                                </li>
+
+                                <li class="menu__item">
+                                    <a href="{% url "contact_form" %}" class="menu__link">{% trans 'Contact us' %}</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </header>
+            {% endblock mainmenu %}
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

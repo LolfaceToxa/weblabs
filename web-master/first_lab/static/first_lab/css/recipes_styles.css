@@ -1,0 +1,327 @@
+/*подключение шрифта Roboto*/
+@font-face {
+    font-family: "MyRoboto";
+    src: url("../fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+}
+
+body {
+    display: block;
+    margin: 0;
+}
+
+
+.pages{
+    width: 1900px;
+    height: 1200px;
+    box-shadow: inset 0 0 1920px 1080px rgba(20, 44, 54, 0.6);
+}
+
+/*Первая страница*/
+
+.pages#start-page{
+    background: url("../images/back.jpg");
+    background-size: 100% auto;
+}
+
+div#menu{
+    position: absolute;
+    /*width: 100%;*/
+    height: 102px;
+    left: 0;
+    top: 38px;
+}
+
+
+.pages#about-us, .pages#register{
+    background: url("../images/back.jpg");
+    background-size: 100% auto;
+}
+
+span#icon{
+    position: absolute;
+    width: 95px;
+    height: 76px;
+    left: 247px;
+    top: 13px;
+
+    background: url("../images/logo.png");
+    background-size: 99% auto;
+}
+
+span#about-us{
+    position: absolute;
+    width: 114px;
+    height: 35px;
+    left: 1131px;
+    top: 33px;
+
+    font-family: MyRoboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 140%;
+    /* identical to box height, or 35px */
+
+    letter-spacing: 0.05em;
+
+    color: #FFFFFF;
+}
+
+span#log-in{
+    position: absolute;
+    width: 80px;
+    height: 35px;
+    left: 1340px;
+    top: 33px;
+
+    font-family: MyRoboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 140%;
+    /* identical to box height, or 35px */
+
+    letter-spacing: 0.05em;
+
+    color: #FFFFFF;
+}
+
+h1#title{
+    position: absolute;
+    width: 970px;
+    height: 190px;
+    right: 320px;
+    top: 360px;
+
+    font-family: MyRoboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 70px;
+    line-height: 109px;
+    letter-spacing: 0.05em;
+
+    color: #FFFFFF;
+}
+
+h2#tagline{
+    position: absolute;
+    width: 785px;
+    height: 153px;
+    left: 455px;
+    top: 519px;
+
+    font-family: MyRoboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 140%;
+    /* or 42px */
+
+    text-align: center;
+    letter-spacing: 0.05em;
+
+    color: #FFFFFF;
+}
+
+button#create{
+    position: absolute;
+    width: 350px;
+    height: 78px;
+    left: 680px;
+    top: 670px;
+
+    border-radius: 50px;
+    background: url("../images/create_button.png");
+}
+
+
+/*Вторая страница*/
+
+
+.second-titles{
+    position: absolute;
+    width: 311px;
+    height: 70px;
+    top: 180px;
+
+    font-family: MyRoboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 45px;
+    line-height: 70px;
+    letter-spacing: 0.05em;
+
+    color: #FFFFFF;
+}
+
+#about-us-title{
+    left: 330px;
+
+}
+
+span#about-us-text{
+    /*white-space: pre-wrap;*/
+
+    position: absolute;
+    width: 1076px;
+    height: 431px;
+    left: 330px;
+    top: 340px;
+
+    font-family: MyRoboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 47px;
+    letter-spacing: 0.05em;
+
+    color: #FFFFFF;
+}
+
+h2#get-started{
+    position: absolute;
+    width: 460px;
+    height: 59px;
+    left: 610px;
+    top: 660px;
+
+    font-family: MyRoboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 59px;
+    /* identical to box height */
+
+    letter-spacing: 0.05em;
+
+    color: #FFFFFF;
+}
+
+
+#register-title{
+    text-align: center;
+    left: 680px;
+    top: 140px;
+    /*left: 630px;*/
+}
+
+
+.container {
+    /*background: green;*/
+    position: relative;
+    width: 789px;
+    height: 600px;
+    left: 450px;
+    top: 280px;
+
+    opacity: 0.8;
+}
+
+.form {
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.form-control{
+    /*border: 2px solid #f0f0f0;*/
+    position: relative;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    width: 730px;
+    height: 80px;
+
+    /*background: #C4C4C4;*/
+    border-radius: 10px;
+}
+
+.form-control.success input{
+    border-color: #12E635;
+}
+
+.form-control.success i.fa-check-circle {
+    visibility: visible;
+    color: #12E635;
+}
+
+.form-control.error input{
+    border-color: #FF0404;
+}
+
+.form-control.error i.fa-exclamation-circle {
+    visibility: visible;
+    color: #FF0404;
+}
+
+.form-control input {
+    background: #FFFFFF;
+    border: 2px solid #f0f0f0;
+    border-radius: 10px;
+    display: block;
+    font-family: MyRoboto;
+    font-size: 20px;
+    padding: 20px;
+    width: 100%;
+    /*height: 100%;*/
+}
+
+.form-control i{
+    position: absolute;
+    visibility: hidden;
+    top:25px;
+    right: -25px;
+}
+
+.form-control small{
+    position: absolute;
+    visibility: hidden;
+    bottom: -5px;
+    left: 0;
+    color: #FFFFFF;
+    font-family: MyRoboto;
+    font-size: 20px;
+}
+
+.form-control.error small{
+    visibility: visible;
+    color: #FF0404;
+}
+
+.form button{
+    position: absolute;
+    background: url("../images/create_button.png");
+    background-size: 100%;
+    width: 280px;
+    height: 62px;
+    left: 235px;
+
+    border-radius: 50px;
+
+    display: block;
+}
+
+/*универсальные*/
+span.shadow{
+    background-size: 100% auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1080px;
+
+    /*background: #111d23;*/
+    /*opacity: 0.55;*/
+    background: linear-gradient(180deg, rgba(18, 30, 35, 0.69) 85%, rgba(17, 30, 34, 0.13) 200%);
+}
+
+a.hrefs{
+    text-decoration: none;
+    color: white;
+}
+a.hrefs:hover {
+    text-decoration: underline;
+}
+
+html {
+  scroll-behavior: smooth;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+{# contact.html #}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% trans 'Contact us' %}<br></title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" crossorigin="anonymous">
+
+</head>
+
+<body>
+<div class="container mt-5 w-50">
+  <form id="contactForm" method="POST">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input type="submit" name="contact-submit" class="btn btn-success btn-lg" />
+  </form>
+</div>
+{% block javascript %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+      $(document).ready(function () {
+          // отслеживаем событие отправки формы
+          $('#contactForm').submit(function () {
+              // создаем AJAX-вызов
+              $.ajax({
+                  data: $(this).serialize(), // получаем данные формы
+                  type: $(this).attr('method'), // GET или POST
+                  url: "{% url 'contact_form' %}",
+                  // если успешно, то
+                  success: function (response) {
+                      alert("Спасибо, что обратились к нам " + response.name);
+                  },
+                  // если ошибка, то
+                  error: function (response) {
+                      // предупредим об ошибке
+                      alert(response.responseJSON.errors);
+                      console.log(response.responseJSON.errors)
+                  }
+              });
+              return false;
+          });
+      })
+  </script>
+{% endblock javascript %}
+<div class="wrapper">
+
+            {% block mainmenu %}
+                <header class="header">
+                    <div class="header__container _container">
+                        <nav class="header__menu menu">
+                            <ul class="menu__list">
+                                <li class="menu__item">
+                                    <a href="{% url "info" %}" class="menu__link"> {% trans 'Return' %}</a>
+                                </li>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </header>
+            {% endblock mainmenu %}
+            {% block content %}
+            {% endblock %}
+        </div>
+</body>
+</html>

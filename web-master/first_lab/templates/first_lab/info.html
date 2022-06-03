@@ -1,0 +1,30 @@
+{% extends 'first_lab/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+{#    <div class="pages" id="about-us">#}
+{#        <h1 class="second-titles" id="about-us-title">Общая информация</h1>#}
+{#        <span id="about-us-text">Хотели бы вы делиться своими мыслями о городе и окружающей среде?<br>Здесь вы сможете легко это сделать -
+        достаточно всего лишь зарегистрироваться =)<br>#}
+{#        </span>#}
+{#        <h2 id="get-started">Начнём же!</h2>#}
+{#    </div>#}
+    <main class="page">
+        <div class="page__about_us-block">
+            <div class="about_us-block__container _container">
+                <div class="about_us-block__body">
+
+                    <h1 class="about_us-block__title">{% trans 'Info' %}</h1>
+
+                    <div class="about_us-block__text">
+                        {% trans 'Do you want to share your opinion' %}<br>{% trans 'You can do it here' %}<br>
+                    </div>
+
+                </div>
+            </div>
+            <div class="about_us-block__image _ibg">
+                <img src="{% static "first_lab/images/back.jpg" %}" alt="cover">
+            </div>
+        </div>
+    </main>
+{% endblock %}
